@@ -1,0 +1,8 @@
+baseURL: https://penbudov.firebaseapp.com/
+canonifyURLs: true
+languageCode: cs
+title:
+theme: my-theme
+params:
+ phone: "736 400 189"
+ email: zdenek.pribyla@gmail.com
