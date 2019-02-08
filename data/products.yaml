@@ -1,0 +1,58 @@
+﻿- id: dum
+  weight: 01
+  title: Prodej rodinného domu
+  title2: Rodinný dům
+  description: 
+  imgurl: /images/icons/house.png
+  cena: 3000 - 4000
+  detail: Cena se odvíjí od součtu podlahových ploch, složitosti tvaru budovy a kvalitě dokumentace.
+
+- id: byt
+  weight: 02
+  title: Prodej bytu
+  description:
+  imgurl: /images/icons/living-room.png
+
+- id: byt-pronajem
+  weight: 03
+  title: Pronájem bytu/domu
+  description:
+  imgurl: /images/icons/pronajem.png
+
+- id: svj
+  weight: 05
+  title: SVJ/družstva
+  title2: Bytový dům
+  description:
+  imgurl: /images/icons/svj.png
+  cena: od 5000
+  detail: O ceně rozhoduje zejména rozloha, počet podlaží a bytových jednotek.
+
+- id: novostavba
+  weight: 04
+  title: Novostavba
+  title2: Novostavba
+  description:
+  imgurl: /images/icons/novostavba.png
+
+- id: ostatni-budovy
+  weight: 06
+  title: Ostatní budovy
+  title2: Ostatní budovy
+  description:
+  imgurl: /images/icons/ostatni-budovy.png
+  cena: od 5000
+  detail: Budovy kancelářské, budovy pro obchodní účely a veřejné budovy.
+
+- id: verejne-budovy
+  weight: 07
+  title: Veřejné budovy
+  title2: Ostatní budovy
+  description:
+  imgurl: /images/icons/verejne-budovy.png
+
+- id: zelena-usporam
+  weight: 08
+  title: Rekonstrukce budov
+  description:
+  imgurl: /images/icons/zelena-usporam.png
