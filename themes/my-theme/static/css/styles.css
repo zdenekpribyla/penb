@@ -1,0 +1,86 @@
+.who-icons:hover {
+	transform: scale(1.1);
+	transition: transform .1s
+}
+
+.benefity__title {
+	margin-top: 15px;
+}
+
+.benefity__desc {
+	margin-top: 10px
+}
+
+
+.homepage__header-contact {
+	font-size: 26px;
+	padding: 10px 0;
+}
+
+/* font for mobile device */
+@media (max-width: 767px) {
+	.homepage__header-contact {
+		font-size: 16px
+	}
+	h1 {
+		font-size: 2rem;
+	}
+	h2 {
+		font-size: 1.8rem
+	}
+	h3 {
+		font-size: 1.5rem
+	}
+	h4 {
+		font-size: 1.3rem
+	}
+
+}
+
+
+.homepage__contakt-title {
+	margin-top: 15px;
+}
+
+.homepage__contact-desc {
+	font-weight: bold;
+}
+
+@media (max-width: 767px) {
+	.homepage-contact {
+		margin-top: 25px;
+	}
+}
+
+.homepage__contact-step-title {
+	font-size: 20px;
+}
+
+.list-style-type {
+	list-style-type: none;
+}
+
+.kontakt__title {
+	margin: 20px 0;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.kontakt__texty {
+	font-family: 'Roboto', sans-serif;
+	margin-top: 20px;
+}
+
+.kontakt__li {
+	margin-bottom: 15px;
+}
+
+.kontakt__icon {
+	padding-right: 15px;
+	color: #8dd1e1;
+}
+
+.blockquote-footer {
+	color: #868686
+}

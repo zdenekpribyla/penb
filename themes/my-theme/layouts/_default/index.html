@@ -1,0 +1,232 @@
+﻿{{ define "main" }}
+<section id="banner" class="bar relative-positioned" style="background: url('/images/header-1.jpg') center center no-repeat; background-size: cover; margin-top: 50px">
+
+	<div class="container">
+		
+		<div style="padding: 50px 0; color: white; text-align: center;">
+			<div style="padding: 20px; border: solid 3px white; background: #00000094; display: inline-block">
+			<h1 class="banner__title text-center">Průkaz energetické náročnosti budov</h1>
+				<div style="margin: 30px 0; display: inline-block; text-align: right">
+				<div class="homepage__header-contact"><i class="fas fa-mobile-alt benefity__icon" style="padding-right: 20px"></i><a href="tel:{{ .Site.Params.phone }}" style="letter-spacing: 1px;color: white">{{ .Site.Params.phone }}</a>
+				</div>
+				<div class="homepage__header-contact"><i class="fas fa-envelope benefity__icon" style="padding-right: 20px"></i>{{ .Site.Params.email }}</div>
+
+			</div>
+				</div>
+		</div>
+	</div>
+</section>
+
+<section id="sluzby" style="padding-bottom: 60px;">
+	<div class="container text-center">
+		<h2 style="margin: 45px 0 40px 0; border-bottom: solid 2px #09365b; padding-bottom: 20px; display: inline-block">Kdy musíme mít energetický štítek</h2>
+		<div class="row" style="display: flex">
+
+			{{ $icons := (slice "dum" "byt" "byt-pronajem" "verejne-budovy" "prodej-domu" "svj" "ostatni-budovy" "zelena-usporam" "novostavba") }}
+			{{ range sort (where .Site.Data.products ".id" "in" $icons) "weight" "asc" }}
+
+			<div class="col-md-3 col-sm-12" style="margin-bottom: 40px">
+				<div class="sluzby_ramecek">
+					<div style="height: 100px">
+					<img src="{{ .imgurl }}" style="max-height: 80px;" class="img-fluid who-icons">
+						</div>
+					<div style="height: 40px">
+						<div class="sluzby__title align-middle" style="font-size: 16px; text-transform: uppercase; font-weight: bold">{{ .title }}</div>
+						</div>
+					<p class="sluzby__desc"></p>
+
+				</div>
+			</div>
+
+			{{ end }}
+
+			
+
+
+		</div>
+	</div>
+</section>
+
+<section id="benefity" style="background: linear-gradient(-45deg, #09365b 40%, #44a8bf)">
+	<div class="container text-center">
+		<h2 style="margin: 45px 0 40px 0; border-bottom: solid 2px #8cd1e1; padding-bottom: 20px; display: inline-block; color: white">Proč si nás klienti vybírají</h2>
+		<div class="row" style="color: white;">
+			<div class="col-md-4 col-xs-12" style="margin-bottom: 45px">
+				<div>
+					<i class="fas fa-comment benefity__icon fa-2x"></i>
+					<h3 class="benefity__title">Rychlé zhotovení</h3>
+					<p class="benefity__desc">Dodání do 4 dnů. Expresní zhotovení uděláme do 48 hodin! </p>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-xs-12" style="margin-bottom: 45px">
+				<div>
+					<i class="fas fa-handshake benefity__icon fa-2x"></i>
+					<h3 class="benefity__title">Férová cena</h3>
+					<p class="benefity__desc">Cenu budete znát předem. Žádná záloha. Platba až po dodání dokumentace.</p>
+				</div>
+			</div>
+
+			
+			<div class="col-md-4 col-xs-12" style="margin-bottom: 45px">
+				<div>
+					<i class="fas fa-certificate benefity__icon fa-2x"></i>
+					<h3 class="benefity__title">Odbornost a certifikace</h3>
+					<p class="benefity__desc">Jsme řádně registrování v Seznamu energetických specialistů</p>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</section>
+
+<section id="cenik">
+	<div class="container text-center">
+		<h2 style="margin: 45px 0 40px 0; border-bottom: solid 2px #09365b; padding-bottom: 20px; display: inline-block;" class="text-center">Orientační ceník</h2>
+		<div class="row" style="margin-top: 30px">
+			
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Tyb budovy</th>
+						<th scope="col">Cena</th>
+						<th scope="col">Detail</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					{{ $icons := (slice "dum" "svj" "ostatni-budovy") }}
+					{{ range sort (where .Site.Data.products ".id" "in" $icons) "weight" "asc" }}
+
+
+					<tr>
+						<td data-label="Typ budovy"><img src="{{ .imgurl }}" style="max-height: 60px" /><span style=" float: right">{{ .title2 }}</span></td>+
+						<td data-label="Cena">{{ .cena }} Kč</td>
+						<td data-label="Detail"><i>{{ .detail }}</i></td>
+					</tr>
+
+
+					{{ end }}
+				</tbody>
+			</table>
+
+		</div>
+		</div>
+	
+</section>
+
+<section id="pronajem__jak-postupovat">
+	<div class="container text-center" style="padding-top: 60px; padding-bottom: 20px">
+		<div class="row">
+			<div class="col-md-3 col-xs-12" style="margin-bottom: 45px">
+				<div>
+					<!--<i class="fas fa-phone benefity__icon fa-3x"></i>-->
+					<h3 class="homepage__contact-step-title"><b>1.</b> Kontaktujte nás</h3>
+					<img src="/images/phone.jpg" class="img-fluid" style="border-radius: 50%; max-width: 150px">
+					<p class="benefity__desc" style="margin-top: 20px">
+						Napište nám email na <b>{{ .Site.Params.email }}</b> nebo zavolejte <a href="tel:{{ .Site.Params.phone }}" style="color: #09365b; font-weight: bold">{{ .Site.Params.phone }}</a> v Po-Pá 8-18 hod.
+						Nebo napište sms a co nejdříve se vám ozveme.
+					</p>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-xs-12" style="margin-bottom: 45px">
+				<div>
+					<!--<i class="fas fa-envelope benefity__icon fa-3x"></i>-->
+					<h3 class="homepage__contact-step-title" style="letter-spacing: 1px;"><b>2.</b> Dohodneme podmínky</h3>
+					<img src="/images/terms.jpg" class="img-fluid" style="border-radius: 50%; max-width: 150px">
+					<p class="benefity__desc" style="margin-top: 20px">Odpovíme Vám na všechny dotazy. Dohodneme se na ceně a datu vypracování. Dopředu neplatíte žádnou zálohu.</p>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-xs-12" style="margin-bottom: 45px">
+				<div>
+					<!--<i class="fas fa-envelope benefity__icon fa-3x"></i>-->
+					<h3 class="homepage__contact-step-title" style="letter-spacing: 1px;"><b>3.</b> Zaměříme</h3>
+					<img src="/images/measure.jpg" class="img-fluid" style="border-radius: 50%; max-width: 150px">
+					<p class="benefity__desc" style="margin-top: 20px">Pokud nemáte k dispozici projektovou dokumentaci budovy, provedeme zaměření všech potřebných parametrů budovy.</p>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-xs-12" style="margin-bottom: 45px">
+				<div>
+					<!--<i class="fas fa-envelope benefity__icon fa-3x"></i>-->
+					<h3 class="homepage__contact-step-title" style="letter-spacing: 1px;"><b>4.</b> Zpracujeme průkaz</h3>
+					<img src="/images/document.jpg" class="img-fluid" style="border-radius: 50%; max-width: 150px">
+					<p class="benefity__desc" style="margin-top: 20px">Hotový průkaz dodáme v dohodnutém termínu. Buď v elektronické podobě nebo vytištěnou verzi pošleme poštou či předáme osobně.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="mapa-fakturace" style="background: url('/images/cz-pozadi-gauss.jpg') center center no-repeat; background-size: cover;">
+	<div class="container">
+		<div class="row" style="padding-top: 50px; padding-bottom: 50px">
+			<div class="col-md-6 col-xs-12 text-center">
+				<h3 style="background: #09365b; padding: 15px 20px; color: white; display: inline-block;">Působíme v celé České republice</h3>
+				<img src="/images/cz-orez.png" style="margin-top: 20px; width: 70%">
+			</div>
+			<div class="col-lg-6 col-xs-12 text-center">
+				
+				
+					<div class="homepage-contact">
+						<i class="fas fa-phone benefity__icon fa-2x" style="color: #09365b"></i>
+						<h4 class="homepage__contakt-title"><a href="tel:{{ .Site.Params.email }}" style="color: black;letter-spacing: 1px">+420 {{ .Site.Params.phone }}</a></h4>
+						<p class="homepage__contact-desc" style="padding: 0 20%">
+							Volejte nám v pracovní dny Po-Pá 7-19 hod. Nebo napište sms a co nejdříve se vám ozveme.
+						</p>
+					</div>
+			
+
+				
+					<div class="homepage-contact" style="margin-top: 30px">
+						<i class="fas fa-envelope benefity__icon fa-2x" style="color: #09365b"></i>
+						<h4 class="homepage__contakt-title" style="letter-spacing: 1px;">{{ .Site.Params.email }}</h4>
+						<p class="homepage__contact-desc">Pište kdykoli! Na emaily odpovídáme velmi rychle.</p>
+					</div>
+				
+				
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+<section id="faq">
+	<div class="container pb-5">
+		<div class="text-center"><h2 style="margin: 45px 0 40px 0; border-bottom: solid 2px #09365b; padding-bottom: 20px; display: inline-block">Co vás nejvíc zajímá</h2></div>
+
+		
+		<div id="accordion" class="mx-auto" style="max-width: 880px">
+			{{ range .Site.Data.faq }}
+			<div class="card mb-3">
+				<div class="card-header" id="heading{{ .h }}">
+					<h5 class="mb-0">
+						<button class="btn btn-link faq__question" data-toggle="collapse" data-target="#collapse{{ .h }}" aria-expanded="true" aria-controls="collapseOne">
+							{{ .q }}
+						</button>
+					</h5>
+				</div>
+
+				<div id="collapse{{ .h }}" class="collapse" aria-labelledby="heading{{ .h }}" data-parent="#accordion">
+					<div class="card-body faq__answer">
+						{{ .a }}
+					</div>
+				</div>
+			</div>
+
+			{{ end }}
+
+		</div>
+
+		
+	</div>
+</section>
+
+
+
+
+
+{{- end }}
