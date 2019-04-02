@@ -19,7 +19,7 @@
 
 <section id="sluzby" style="padding-bottom: 60px;">
 	<div class="container text-center">
-		<h2 style="margin: 45px 0 40px 0; border-bottom: solid 2px #09365b; padding-bottom: 20px; display: inline-block">Kdy musíme mít energetický štítek</h2>
+		<h2 style="margin: 45px 0 40px 0; border-bottom: solid 2px #09365b; padding-bottom: 20px; display: inline-block" id="kdy-musime-mit-stitek">Kdy musíme mít energetický štítek</h2>
 		<div class="row" style="display: flex">
 
 			{{ $icons := (slice "dum" "byt" "byt-pronajem" "verejne-budovy" "prodej-domu" "svj" "ostatni-budovy" "zelena-usporam" "novostavba") }}
@@ -82,16 +82,17 @@
 
 <section id="cenik">
 	<div class="container text-center">
-		<h2 style="margin: 45px 0 40px 0; border-bottom: solid 2px #09365b; padding-bottom: 20px; display: inline-block;" class="text-center">Orientační ceník</h2>
+		<h2 style="margin: 45px 0 40px 0; border-bottom: solid 2px #09365b; padding-bottom: 20px; display: inline-block;" class="text-center" id="cenik">Orientační ceník</h2>
 		<div class="row" style="margin-top: 30px">
 			
 			<table>
 				<thead>
 					<tr>
 						<th scope="col">Tyb budovy</th>
+						<th scope="col">Popis</th>
 						<th scope="col">Cena</th>
 						<th scope="col">Detail</th>
-						
+
 					</tr>
 				</thead>
 				<tbody>
@@ -100,7 +101,8 @@
 
 
 					<tr>
-						<td data-label="Typ budovy"><img src="{{ .imgurl }}" style="max-height: 60px" /><span style=" float: right">{{ .title2 }}</span></td>+
+						<td data-label="Typ budovy"><img src="{{ .imgurl }}" style="max-height: 60px" /></td>
+						<td data-label="Popis">{{ .title2 }}</td>
 						<td data-label="Cena">{{ .cena }} Kč</td>
 						<td data-label="Detail"><i>{{ .detail }}</i></td>
 					</tr>
@@ -160,7 +162,7 @@
 	</div>
 </section>
 
-<section id="mapa-fakturace" style="background: url('/images/cz-pozadi-gauss.jpg') center center no-repeat; background-size: cover;">
+<section id="kontakt" style="background: url('/images/cz-pozadi-gauss.jpg') center center no-repeat; background-size: cover;">
 	<div class="container">
 		<div class="row" style="padding-top: 50px; padding-bottom: 50px">
 			<div class="col-md-6 col-xs-12 text-center">

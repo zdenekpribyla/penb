@@ -1,3 +1,20 @@
+.btn {
+	white-space: unset
+}
+
+.logo {
+	position: relative;
+	border-left: 2px solid white;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	padding-left: 8px;
+}
+.logo__border-top-bottom {
+	position: absolute;
+	border-top: 2px solid white;
+	top: 0px
+}
+
 .who-icons:hover {
 	transform: scale(1.1);
 	transition: transform .1s
@@ -13,14 +30,14 @@
 
 
 .homepage__header-contact {
-	font-size: 26px;
+	font-size: 30px;
 	padding: 10px 0;
 }
 
 /* font for mobile device */
 @media (max-width: 767px) {
 	.homepage__header-contact {
-		font-size: 16px
+		font-size: 20px
 	}
 	h1 {
 		font-size: 2rem;
