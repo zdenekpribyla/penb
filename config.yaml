@@ -1,8 +1,8 @@
-baseURL: https://penbudov.firebaseapp.com/
+baseURL: https://eprukaz.eu
 canonifyURLs: true
 languageCode: cs
 title:
 theme: my-theme
 params:
- phone: "736 400 189"
- email: zdenek.pribyla@gmail.com
+ phone: "777 228 522"
+ email: ondrej.pater@seznam.cz
